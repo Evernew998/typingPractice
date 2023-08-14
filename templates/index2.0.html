@@ -70,49 +70,52 @@
         // Count the number of times that keys needed to be pressed (including spacebar) to type all the words in random_word_list
         let total_keys = calculate_keys(random_word_list);
 
-        //////////////////////////////////////////////////////
-        document.getElementById('bla').innerHTML = total_keys;
-
-
         typing_area.addEventListener('keydown', function(event) {
             let key = event.key;
-            let word_index = typing_area.value.length;
+            let new_length = typing_area.value.length;
+            let color = "green";
+            let id = "w" + (new_length - 1);
+            //////////////////////////////////////////////////////
+            document.getElementById('bla').innerHTML = new_length;
+
+            /////////////////////////////////////////////
+            document.getElementById('bla2').innerHTML = id;
 
             // Increment key_count for each key pressed except if the key was backspace
             if (key != 'Backspace') {
                 key_count++;
             }
 
-            // Turn first letter green when spelled correctly
-            if (word_index == 0 && words_in_text.length > 0) {
-                if (key == words_in_text[0][word_index]) {
-                    turn_letter_green(key, word_index);
+            if (new_length < 15) {
+                // Turn letter green when it's spelled correctly
+                if (key == words_in_text[0][new_length]) {
+                    if (new_length == 0) {
+                        turn_letter_color(key, new_length, color);
+                    }
+                    else if (document.getElementById(id).style.color == 'green') {
+                        turn_letter_color(key, new_length, color);
+                    }
+                    // If the previous letter is not green, turn current letter red even when it's spelled correctly
+                    else {
+                        color = "red";
+                        turn_letter_color(key, new_length, color);
+                    }
                 }
-
-                // Turn first letter white when backspace is pressed
-                else if (key == 'Backspace') {
-                    turn_letter_white(key, word_index);
-                }
-            }
-
-            else if (word_index != 0 && words_in_text.length > 0){
-                if (word_index - 1 < words_in_text[0].length) {
-                    word_index2 = word_index - 1;
-                    id = 'w' + word_index2;
-
-                    // Turn letter green when spelled correctly
-                    if (document.getElementById(id).style.color == "green") {
-                        if (key == words_in_text[0][word_index]) {
-                            turn_letter_green(key, word_index);
+                else {
+                    /////////////////////////////////////////////
+                    document.getElementById('bla3').innerHTML = key.charCodeAt(0);
+                    // Turn letter white when backpace is pressed
+                    if (key == 'Backspace') {
+                        color = "white";
+                        if (new_length != 0) {
+                            new_length -= 1;
                         }
-
-                        // Turn letter white when backspace is pressed
-                        if (key == 'Backspace') {
-                            word_index -= 1;
-                            if (word_index > -1 && word_index < words_in_text[0].length) {
-                                turn_letter_white(key, word_index);
-                            }
-                        }
+                        turn_letter_color(key, new_length, color);
+                    }
+                    // Turn letter red when it's misspelled
+                    else if (event.key.length == 1) {
+                        color = "red";
+                        turn_letter_color(key, new_length, color);
                     }
                 }
             }
@@ -320,8 +323,6 @@
 
             // Reset total number of keys
             total_keys = calculate_keys(random_word_list);
-            /////////////////////////////////////////////
-            document.getElementById('bla').innerHTML = total_keys;
 
             // Reset gross typing speed
             document.getElementById('gts').innerHTML = "";
@@ -390,14 +391,9 @@
             }
         }
 
-        function turn_letter_white(key, letter_position) {
+        function turn_letter_color(key, letter_position, color) {
             let id = 'w' + letter_position;
-            document.getElementById(id).style.color = "white";
-        }
-
-        function turn_letter_green(key, letter_position) {
-            let id = 'w' + letter_position;
-            document.getElementById(id).style.color = "green";
+            document.getElementById(id).style.color = color;
         }
 
         function print_first_word(list_of_words) {
