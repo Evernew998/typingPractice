@@ -3,7 +3,9 @@
 #### Description:
 Typing Practice is a website developed using Python, Flask, Javascript, HTML, and CSS. Its purpose is to allow people to practice their typing skills by typing a set number of random words. The website will then calculate their typing speed and accuracy. Currently, this website only supports two languages, English and Bahasa Malaysia. Also, it only supports the QWERTY keyboard layout. It requires the user to have a keyboard to work. So, it usually only works on desktops and laptops. 
 
+There are five files in this project, excluding the README.md file. These are app.py, layout.html, index.html, styles.css, and requirements.txt. The app.py file contains code to create the most basic Flask application. 
 
+The layout.html file is just a barebones HTML layout. It has one CSS attribute, font-size:clamp(2.5rem, 2.125rem + 1.875vw, 4.375rem), that is important in controlling the responsiveness of the font size. It allows font size to scale according to screen size, which makes the website look great on most devices.
 
 I chose this project because I wanted to practice using Javascript. The biggest challenge I faced when developing this website was implementing the letter colour change feature. This feature changes the letter to green when the user types it correctly. Otherwise, it turns the letter red. Implementing this feature felt like I was trying to solve one of CS50's earlier problem sets. On the surface, the feature seemed simple. However, looking deeper into it, I discovered that there were more conditions that I needed to take into consideration. My biggest mistake was going straight into coding when trying to solve the new problems that kept popping up. Instead, even before doing anything, I should have taken the time to figure out exactly how I wanted to implement the feature.
 
