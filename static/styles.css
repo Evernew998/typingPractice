@@ -1,0 +1,51 @@
+.language_option {
+    color: white; 
+    font-size:0.30em; 
+    margin-top:1.8%; 
+    text-align:right; 
+    margin-right:1.8%;
+}
+
+#title {
+    color: white;
+    text-align:center; 
+    margin-top:5.2%; 
+    font-size:1em; 
+    font-family:Lucida-Console;
+}
+
+.random_words {
+    color: white; 
+    font-size:0.57em; 
+    text-align:center; 
+    margin-top:calc(8px + 1.5625vw);
+}
+
+#reset_eve {
+    font-size:0.6em; 
+    border: 2px solid white; 
+    background-color: black; 
+    color: white; 
+    border-radius: 5px;
+}
+
+.calculations {
+    color:white; 
+    font-size:0.43em; 
+    text-align:center; 
+    margin-top:calc(8px + 1.5625vw);
+}
+
+.calculation_value {
+    color:white; 
+    font-size:0.35em; 
+    text-align:center; 
+    margin-top:calc(8px + 1.5625vw);
+}
+
+.total_words {
+    text-align:center; 
+    font-size:0.43em; 
+    color: white; 
+    margin-top:calc(8px + 1.5625vw);
+}

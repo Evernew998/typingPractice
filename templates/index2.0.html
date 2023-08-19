@@ -482,7 +482,7 @@
 {% endblock %}
 
 {% block body %}
-            <div style="color: white; font-size:0.30em; margin-top:1.8%; text-align:right; margin-right:1.8%;">
+            <div class="language_option">
                 <label id="lang_label" for="language"></label>
                 <select id="language" style="color: white; background-color: black;">
                     <option>English</option>
@@ -490,29 +490,29 @@
                 </select>
             </div>
             <div>
-                <p id="title" style="color: white; text-align:center; margin-top:5.2%; font-size:1em; font-family:Lucida-Console;">TYPING PRACTICE</p>
+                <p id="title">TYPING PRACTICE</p>
             </div>
-            <div style="color: white; font-size:0.57em; text-align:center; margin-top:calc(8px + 1.5625vw);">
+            <div class="random_words">
                 <p>
                     <span id="w0"></span><span id="w1"></span><span id="w2"></span><span id="w3"></span><span id="w4"></span><span id="w5"></span><span id="w6"></span><span id="w7"></span><span id="w8"></span><span id="w9"></span><span id="w10"></span><span id="w11"></span><span id="w12"></span><span id="w13"></span><span id="w14"></span>
                     <span id="words"></span>
                 </p>
             </div>
             <div style="text-align:center;">
-                <button id="reset_eve" type="reset" hidden style="font-size:0.6em; border: 2px solid white; background-color: black; color: white; border-radius: 5px;" >Reset</button>
+                <button id="reset_eve" type="reset" hidden>Reset</button>
             </div>
             <div class="mb-3">
                 <input class="form-control mx-auto w-auto" style="font-size:0.57em;" autocomplete="off" autofocus id="typing_area" type="text">
             </div>
-            <div style="color:white; font-size:0.43em; text-align:center; margin-top:calc(8px + 1.5625vw);">
+            <div class="calculations">
                 <p><span id="words_typed">0</span>/<span id="sum_of_words">10</span><span id="minutes" style="margin-left: 80px">0</span><span>m:</span><span id="seconds">0</span>s</p>
             </div>
-            <div style="color:white; font-size:0.35em; text-align:center; margin-top:calc(8px + 1.5625vw);">
+            <div class="calculation_value">
                 <p><span id="gts"></span><span id="wpm" style="color: #50C878;"></span></p>
                 <p><span id="acc"></span><span id="accuracy" style="color: #50C878;"></span></p>
                 <p><span id="ats"></span><span id="adj_wpm" style="color: #50C878;"></span></p>
             </div>
-            <div style="text-align:center; font-size:0.43em; color: white; margin-top:calc(8px + 1.5625vw);">
+            <div class="total_words">
                 <label id="test" for="total_number">Select total number of words</label>
                 <select id="total_number">
                     <option>10</option>
