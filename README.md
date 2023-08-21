@@ -1,4 +1,4 @@
-# TYPINGPRACTICE
+# TYPING PRACTICE
 #### Video Demo: <https://youtu.be/eSyUkDvDXcE>
 ## Description:
 
