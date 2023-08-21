@@ -1,8 +1,8 @@
 # TYPINGPRACTICE
-#### Video Demo: <URL HERE>
+#### Video Demo: <https://youtu.be/eSyUkDvDXcE>
 ## Description:
 
-Typing Practice is a website developed using Python, Flask, Javascript, HTML, and CSS. Its purpose is to allow people to practice their typing skills by typing a set number of random words. This website will then calculate their typing speed and accuracy. Currently, Typing Practice only supports two languages, English and Bahasa Malaysia. Also, it only supports the QWERTY keyboard layout. It requires the user to have a keyboard to work. So, it usually only works on desktops and laptops. 
+Typing Practice is a website developed using Python, Flask, Javascript, HTML, and CSS. Its purpose is to allow people to practice their typing skills by typing a set number of random words. This website will then calculate their typing speed and accuracy. Currently, Typing Practice only supports two languages, English and Bahasa Malaysia. Also, it only supports the QWERTY keyboard layout. It requires the user to have a keyboard to work. So, it usually only works on desktops and laptops. I chose this project because I wanted to practice using Javascript. 
 
 ## Usage
 
@@ -11,7 +11,7 @@ Here is the procedure for using Typing Practice:
 2. Select the total number of words to type in a single practice session by clicking on a number in the total number of words section at the bottom middle of the screen.
 3. Type the random words that you see above the typing area. If you spell a letter correctly, the corresponding letter will turn green. If you spell it incorrectly, then it will turn red.
 4. After you finish typing all the words, Typing Practice will calculate your gross words per minute, typing accuracy, and adjusted typing speed. To know more about how we calculate these values, go to this link: https://www.typetolearn.app/knowledge-base/how-words-per-minute-and-accuracy-are-calculated/
-5. To reset everything, click the reset button in the middle of the screen or change the total number of words. The reset button will only appear after you have finished typing all the random words.
+5. To reset everything, click the reset button in the middle of the screen, or change the total number or the language of the random words. The reset button will only appear after you have finished typing all the random words.
 
 ## File content
 
@@ -28,7 +28,7 @@ The styles.css file contains the code that styles the content of the webpage. Ge
 
 ## Challenges
 
-I chose this project because I wanted to practice using Javascript. The biggest challenge I faced when developing this website was implementing the letter colour change feature. This feature changes the letter to green when the user types it correctly. Otherwise, it turns the letter red. Implementing this feature felt like I was trying to solve one of CS50's earlier problem sets. On the surface, the feature seemed simple. However, looking deeper, I discovered that there were more conditions that I needed to take into consideration. These conditions were:
+The biggest challenge I faced when developing this website was implementing the letter colour change feature. This feature changes the letter to green when the user types it correctly. Otherwise, it turns the letter red. Implementing this feature felt like I was trying to solve one of CS50's earlier problem sets. On the surface, the feature seemed simple. However, looking deeper, I discovered that there were more conditions that I needed to take into consideration. These conditions were:
 1. If the user spells a letter correctly, it should turn green only if the previous letter is green or if it is the first letter. 
 2. If the previous letter is red, the current letter should also turn red regardless if the user spelt it correctly.
 3. When a user misspells a letter, the letter should turn red. A letter misspelling occurs when the key pressed by the user is unequal to the letter. However, the key has to produce a character on screen. So, keys like the "Shift" or "Enter" keys do not count as they do not create any character. Therefore, if the user presses any of these keys, the letter colour should not turn red.
