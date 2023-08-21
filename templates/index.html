@@ -7,12 +7,6 @@
 {% block head %}
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-
-        ///
-        let width = window.innerWidth;
-        let height = window.innerHeight;
-        document.getElementById('bla3').innerHTML = width + " " + height;
-
         // List containing random 50 English words
         // References:
         // https://www.espressoenglish.net/100-most-common-english-verbs/
@@ -75,11 +69,6 @@
             let new_length = typing_area.value.length;
             let color = "green";
             let id = "w" + (new_length - 1);
-            //////////////////////////////////////////////////////
-            document.getElementById('bla').innerHTML = new_length;
-
-            /////////////////////////////////////////////
-            document.getElementById('bla2').innerHTML = id;
 
             // Increment key_count for each key pressed except if the key was backspace
             if (key != 'Backspace') {
@@ -102,8 +91,6 @@
                     }
                 }
                 else {
-                    /////////////////////////////////////////////
-                    document.getElementById('bla3').innerHTML = key.charCodeAt(0);
                     // Turn letter white when backpace is pressed
                     if (key == 'Backspace') {
                         color = "white";
@@ -252,9 +239,6 @@
         // Change the words displayed based on the user's chosen language
         let language = document.getElementById('language');
         language.addEventListener('change', function() {
-
-            //////////////////////////////////////////////////////////
-            document.getElementById('bla4').innerHTML = language.value;
             
             if (language.value == "English") {
                 words.lang = "en";
@@ -357,9 +341,6 @@
 
         function gross_words_per_min() {
             let gross_wpm = (key_count / 5) / (minutes + seconds / 60);
-
-            //////////////////////////////////////////////////////
-            document.getElementById('bla2').innerHTML = key_count;
             return gross_wpm;
         }
 
