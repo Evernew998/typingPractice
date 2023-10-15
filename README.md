@@ -1,5 +1,5 @@
 # TYPING PRACTICE
-#### Website Link: <https://evernew998.github.io/typingPractice_website/>
+#### Website Link: <https://evernew998.github.io/>
 #### Video Demo: <https://youtu.be/eSyUkDvDXcE>
 ## Description:
 
