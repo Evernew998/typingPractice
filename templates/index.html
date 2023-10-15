@@ -64,11 +64,21 @@
         // Count the number of times that keys needed to be pressed (including spacebar) to type all the words in random_word_list
         let total_keys = calculate_keys(random_word_list);
 
+        let keysPressed = {};
+
         typing_area.addEventListener('keydown', function(event) {
             let key = event.key;
             let new_length = typing_area.value.length;
             let color = "green";
             let id = "w" + (new_length - 1);
+
+            // Enable ctrl + Backspace
+            keysPressed[event.key] = true;
+    
+            if (keysPressed['Control'] && event.key == 'Backspace') {
+                turn_all_letters_white();
+                return false;
+            }
 
             // Increment key_count for each key pressed except if the key was backspace
             if (key != 'Backspace') {
@@ -155,6 +165,16 @@
                 }
             }
         });
+
+        // Enable ctrl + Backspace
+        typing_area.addEventListener('keyup', (event) => {
+            delete keysPressed[event.key];
+        });
+
+        // Deterrent from using text selection to erase letters
+        typing_area.addEventListener('select', function() {
+            this.selectionStart = this.selectionEnd;
+        }, false);
 
         // Declare seconds and minutes
         let seconds_value = document.getElementById('seconds');
